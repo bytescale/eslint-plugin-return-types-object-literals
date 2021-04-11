@@ -1,0 +1,63 @@
+{
+  "name": "eslint-plugin-return-types-object-literals",
+  "version": "1.0.0",
+  "author": "Upload <hello@upload.io> (https://upload.io)",
+  "description": "Ensures explicit return types on functions and lambdas that return object literals.",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "homepage": "https://github.com/upload-io/eslint-plugin-return-types-object-literals",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upload-io/eslint-plugin-return-types-object-literals.git"
+  },
+  "bugs": {
+    "url": "https://github.com/upload-io/eslint-plugin-return-types-object-literals/issues"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "prepack": "rm -rf dist && webpack"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*/**/*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ],
+    "*/**/*.{ts,tsx}": [
+      "bash -c \"tsc --noEmit\""
+    ],
+    "*.{js,jsx,ts,tsx,json,css,html,md,yaml,yml}": [
+      "prettier -c"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "7.11.6",
+    "@babel/preset-env": "7.11.5",
+    "@types/eslint": "^7.2.9",
+    "@types/node": "14.14.10",
+    "@typescript-eslint/eslint-plugin": "4.8.1",
+    "@typescript-eslint/parser": "4.8.1",
+    "@typescript-eslint/types": "^4.21.0",
+    "babel-loader": "8.2.1",
+    "eslint": "7.13.0",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-config-standard-with-typescript": "19.0.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.1.0",
+    "husky": "4.3.0",
+    "lint-staged": "10.5.1",
+    "prettier": "2.1.2",
+    "ts-loader": "8.0.11",
+    "typescript": "4.1.2",
+    "webpack": "5.5.1",
+    "webpack-cli": "4.2.0"
+  }
+}
