@@ -69,6 +69,8 @@ const c = () => {
 
 Ensures excess property checking is performed on objects returned by lambdas.
 
+Without return types on lambdas that return object literals, the object literals will not undergo excess property checking. See below:
+
 ```typescript
 type Foo = { a: boolean }
 
@@ -78,12 +80,12 @@ function foo(callback: () => Foo): void {
 
 foo(() => ({
   a: true,
-  b: false // No compile error (BAD!)
+  b: false // BAD: no excess property error
 }))
 
 foo((): Foo => ({
   a: true,
-  b: false // Compile error (GOOD!)
+  b: false // GOOD: excess property error
 }))
 ```
 
