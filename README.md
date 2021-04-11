@@ -1,8 +1,8 @@
-# ESLint Rule: `return-types-object-literals/require-return-types-for-object-literals`
+## ESLint Rule: `require-return-types-for-object-literals`
 
 Requires return types on lambdas that return object literals.
 
-## Installation
+### Installation
 
 ```bash
 npm install --save-dev eslint-plugin-return-types-object-literals
@@ -23,39 +23,39 @@ rules:
   "return-types-object-literals/require-return-types-for-object-literals": error
 ```
 
-## Examples
+### Examples
 
 ```typescript
+// Error: "Return type missing"
 const a = () => ({
-  // Error: "Return type missing"
   propA: true,
   propB: true
 });
 
+// Error: "Return type missing"
 const b = () => {
-  // Error: "Return type missing"
   return {
     propA: true,
     propB: true
   };
 };
 
+// OK
 const a2 = (): Foo => ({
-  // OK
   propA: true,
   propB: true
 });
 
+// OK
 const b2 = (): Foo => {
-  // OK
   return {
     propA: true,
     propB: true
   };
 };
 
+// OK
 const c = () => {
-  // OK
   const result = {
     propA: true,
     propB: true
@@ -65,7 +65,7 @@ const c = () => {
 };
 ```
 
-## Benefits
+### Benefits
 
 Ensures excess property checking is performed on objects returned by lambdas.
 
@@ -93,13 +93,13 @@ Without a return type, the lambda's return type will be inferred to be a superty
 
 In the example above, the first lambda instance (line 7) is inferred as type `() => Foo & { b: boolean }`, which is subsequently assigned to the variable `callback: () => Foo` on line 3, which is allowed because `Foo & { b: boolean }` is a supertype of `Foo`. In line 12 we fix this by preventing TypeScript from inferring a supertype.
 
-## Credits
+### Credits
 
 The following article was very useful when writing this plugin:
 
 [Writing custom TypeScript ESLint rules: How I learned to love the AST
 ](https://dev.to/alexgomesdev/writing-custom-typescript-eslint-rules-how-i-learned-to-love-the-ast-15pn)
 
-## License
+### License
 
 [MIT](LICENSE)
