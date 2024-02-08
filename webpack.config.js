@@ -15,8 +15,6 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     alias: {
-      // Remember to keep in sync with `tsconfig.json`
-      "upload-compression-plugin": path.resolve(__dirname, "src")
     }
   },
   module: {

@@ -12,8 +12,6 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
     "paths": {
-      "upload-compression-plugin": ["./src/"],
-      "upload-compression-plugin/*": ["./src/*"]
     }
   },
   "include": ["./**/*"],

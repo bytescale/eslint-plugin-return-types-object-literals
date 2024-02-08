@@ -1,17 +1,17 @@
 {
   "name": "eslint-plugin-return-types-object-literals",
   "version": "1.0.1",
-  "author": "Upload <hello@upload.io> (https://upload.io)",
+  "author": "Bytescale <hello@bytescale.com> (https://www.bytescale.com)",
   "description": "Ensures explicit return types on functions and lambdas that return object literals.",
   "license": "MIT",
   "main": "dist/main.js",
-  "homepage": "https://github.com/upload-io/eslint-plugin-return-types-object-literals",
+  "homepage": "https://github.com/bytescale/eslint-plugin-return-types-object-literals",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upload-io/eslint-plugin-return-types-object-literals.git"
+    "url": "git+https://github.com/bytescale/eslint-plugin-return-types-object-literals.git"
   },
   "bugs": {
-    "url": "https://github.com/upload-io/eslint-plugin-return-types-object-literals/issues"
+    "url": "https://github.com/bytescale/eslint-plugin-return-types-object-literals/issues"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

@@ -97,10 +97,12 @@ In the example above, the first lambda instance (line 7) is inferred as type `()
 
 ### Credits
 
-The following article was very useful when writing this plugin:
+The following resources were very useful when writing this plugin:
 
-[Writing custom TypeScript ESLint rules: How I learned to love the AST
-](https://dev.to/alexgomesdev/writing-custom-typescript-eslint-rules-how-i-learned-to-love-the-ast-15pn)
+- [Writing custom TypeScript ESLint rules: How I learned to love the AST](https://dev.to/alexgomesdev/writing-custom-typescript-eslint-rules-how-i-learned-to-love-the-ast-15pn)
+- [AST Explorer](https://astexplorer.net/)
+  - Set language 'JavaScript'
+  - Set parser to '@typescript-eslint/parser'
 
 ### License
 
