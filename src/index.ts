@@ -1,7 +1,4 @@
-import {
-  ArrowFunctionExpression as TSArrowFunctionExpression,
-  FunctionExpression as TSFunctionExpression
-} from "@typescript-eslint/types/dist/ts-estree";
+import { TSESTree } from "@typescript-eslint/types/dist/ts-estree";
 import { Rule } from "eslint";
 import {
   ArrowFunctionExpression,
@@ -52,7 +49,7 @@ export const rules: Record<string, Rule.RuleModule> = {
     create(context: Rule.RuleContext) {
       return {
         ArrowFunctionExpression(node: ArrowFunctionExpression): void {
-          const tsNode = node as TSArrowFunctionExpression;
+          const tsNode = node as TSESTree.ArrowFunctionExpression;
           if (tsNode.returnType === undefined) {
             if (node.body.type === "ObjectExpression") {
               requireReturnType(context, node);
@@ -62,7 +59,7 @@ export const rules: Record<string, Rule.RuleModule> = {
           }
         },
         FunctionExpression(node: FunctionExpression): void {
-          const tsNode = node as TSFunctionExpression;
+          const tsNode = node as TSESTree.FunctionExpression;
           if (tsNode.returnType === undefined) {
             checkBlockStatement(context, node);
           }
